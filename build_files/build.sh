@@ -10,7 +10,26 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux unzip nss nspr cups-libs
+dnf5 install -y tmux unzip
+# basically everything that ChromiumOS linux binaries needs
+dnf5 install -y \
+  nss \
+  nspr \
+	cups-libs \
+	libX11 \
+	libXcomposite \
+	libXcursor \
+	libXdamage \
+	libXext \
+	libXfixes \
+	libXi \
+	libXrandr \
+	libXrender \
+	libXScrnSaver \
+	libXtst \
+	libxcb \
+	libxkbcommon \
+	alsa-lib
 
 # Use a COPR Example:
 #
