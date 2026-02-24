@@ -13,8 +13,8 @@ set -ouex pipefail
 dnf5 install -y tmux unzip
 # basically everything that ChromiumOS linux binaries needs
 dnf5 install -y \
-  nss \
-  nspr \
+  	nss \
+  	nspr \
 	cups-libs \
 	libX11 \
 	libXcomposite \
@@ -29,7 +29,10 @@ dnf5 install -y \
 	libXtst \
 	libxcb \
 	libxkbcommon \
-	alsa-lib
+	alsa-lib \
+	mesa-libEGL \
+	mesa-libGLES \
+	mesa-libGL
 
 # get chromiumos and unpack it
 rm -rf /usr/bluemium/cros/README.txt
