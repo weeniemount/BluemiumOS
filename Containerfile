@@ -5,6 +5,13 @@ COPY build_files /
 # Base Image
 FROM quay.io/fedora/fedora-bootc:43
 
+# we need to copy the files befoer anything else, othewise trying to refernce them in the .sh scripts blows it up :pensive:
+# copy my funny stuff over to the root partition
+
+# also yes i copied this from weenOS
+COPY system_files/overrides/ /
+COPY system_files/custom/ /
+
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable

@@ -31,6 +31,15 @@ dnf5 install -y \
 	libxkbcommon \
 	alsa-lib
 
+# get chromiumos and unpack it
+curl -L \
+  "https://download-chromium.appspot.com/dl/Linux_ChromiumOS_Full?type=snapshots" \
+  -o /tmp/chromiumos.zip
+
+unzip /tmp/chromiumos.zip -d /usr/bluemium/cros
+
+rm -f /tmp/chromiumos.zip
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
