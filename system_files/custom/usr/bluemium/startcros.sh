@@ -4,7 +4,7 @@
 # sudo chvt 8; 
 # we should run this command, but not right now as i need to make sure starting chromium actually works
 
-EGL_PLATFORM=surfaceless /usr/bluemium/cr/chrome \
+EGL_PLATFORM=surfaceless /usr/bluemium/cros/chrome \
   --ozone-platform=drm \
   --enable-running-as-system-compositor \
   --login-profile=user \
