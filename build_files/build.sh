@@ -32,7 +32,7 @@ dnf5 install -y \
 	alsa-lib \
 	mesa-libEGL \
 	mesa-libGLES \
-	mesa-libGL
+	mesa-libGL \
   	mesa-libEGL-devel \
 	mesa-libGLES-devel \
 	mesa-dri-drivers \
