@@ -45,6 +45,21 @@ cp -r /tmp/chrome-chromeos/* /usr/bluemium/cros/
 
 rm -f /tmp/chromiumos.zip
 
+
+# according to chromium documentation, this is some stuff we need to do
+sudo sh -c "echo 'KERNEL==\"event*\", NAME=\"input/%k\", MODE=\"660\", GROUP=\"plugdev\"' > /etc/udev/rules.d/90-input.rules"
+sudo sh -c "echo 'KERNEL==\"card[0-9]*\", NAME=\"dri/%k\", GROUP=\"video\"' > /etc/udev/rules.d/90-dri.rules"
+sudo udevadm control --reload
+sudo udevadm trigger --action=add
+sudo usermod -a -G plugdev $USER
+sudo usermod -a -G video $USER
+sudo usermod -a -G audio $USER
+newgrp video
+newgrp plugdev
+newgrp audio
+
+pactl exit
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
