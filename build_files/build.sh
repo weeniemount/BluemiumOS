@@ -41,7 +41,8 @@ dnf5 install -y \
 	libglvnd-egl \
 	libglvnd-gles \
 	libglvnd-glx \
-	libglvnd-opengl
+	libglvnd-opengl \
+	xorg-x11-server-Xvfb
 
 # get chromiumos and unpack it
 rm -rf /usr/bluemium/cros/README.txt
