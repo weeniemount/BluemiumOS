@@ -33,6 +33,15 @@ dnf5 install -y \
 	mesa-libEGL \
 	mesa-libGLES \
 	mesa-libGL
+  	mesa-libEGL-devel \
+	mesa-libGLES-devel \
+	mesa-dri-drivers \
+	mesa-vulkan-drivers \
+	libglvnd \
+	libglvnd-egl \
+	libglvnd-gles \
+	libglvnd-glx \
+	libglvnd-opengl
 
 # get chromiumos and unpack it
 rm -rf /usr/bluemium/cros/README.txt
