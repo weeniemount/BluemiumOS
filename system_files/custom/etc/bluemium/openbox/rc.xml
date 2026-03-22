@@ -4,6 +4,7 @@
     <application class="*">
       <maximized>yes</maximized>
       <decorations>no</decorations>
+      <layer>below</layer>
     </application>
   </applications>
 </openbox_config>

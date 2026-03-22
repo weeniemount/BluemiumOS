@@ -9,7 +9,7 @@ FROM quay.io/fedora/fedora-bootc:43
 # copy my funny stuff over to the root partition
 
 # also yes i copied this from weenOS
-#COPY system_files/overrides/ /
+COPY system_files/overrides/ /
 COPY system_files/custom/ /
 
 ## Other possible base images include:

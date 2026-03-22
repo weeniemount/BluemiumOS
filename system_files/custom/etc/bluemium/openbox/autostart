@@ -1,1 +1,4 @@
-/usr/bluemium/cros/chrome &
+#!/bin/bash
+/usr/bluemium/cros/chrome
+# sends you back to the login screen just cause
+openbox --exit
