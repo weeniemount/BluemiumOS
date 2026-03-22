@@ -1,0 +1,12 @@
+{
+  "image-name": "BluemiumOS",
+  "image-flavor": "fedora-bootc",
+  "image-vendor": "weeniemount",
+  "image-ref": "ostree-image-signed:docker://ghcr.io/weeniemount/BluemiumOS",
+  "image-tag": "latest",
+  "image-branch": "latest",
+  "base-image-name": "fedora-bootc",
+  "fedora-version": "43",
+  "version": "1.0.0",
+  "version-pretty": "1.0.0"
+}
