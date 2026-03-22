@@ -1,4 +1,5 @@
 #!/bin/bash
+feh --bg-scale /usr/share/bluemium/wallpaper.jpg &
 (
   while ! wmctrl -l | grep -q .; do sleep 0.2; done
   wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz

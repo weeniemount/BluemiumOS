@@ -53,7 +53,8 @@ dnf5 install -y \
     lightdm-gtk \
     xorg-x11-drv-libinput \
     xterm \
-	wmctrl
+	wmctrl \
+	feh
 
 # get chromiumos and unpack it
 rm -rf /usr/bluemium/cros/README.txt

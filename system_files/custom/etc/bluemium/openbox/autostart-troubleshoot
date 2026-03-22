@@ -1,3 +1,4 @@
 #!/bin/bash
+feh --bg-scale /usr/share/bluemium/wallpaper.jpg &
 xterm
 openbox --exit
