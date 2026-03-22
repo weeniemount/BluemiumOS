@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=BluemiumOS Troubleshooting
+Comment=Troubleshooting session
+Exec=/etc/bluemium/xinitrc-troubleshoot
+Type=XSession

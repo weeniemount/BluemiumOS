@@ -3,4 +3,3 @@ Name=Bluemium
 Comment=ChromiumOS kiosk session
 Exec=/etc/bluemium/xinitrc
 Type=XSession
-NoDisplay=true
