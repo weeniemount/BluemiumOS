@@ -44,6 +44,15 @@ dnf5 install -y \
 	libglvnd-opengl \
 	xorg-x11-server-Xvfb
 
+# other stuff
+dnf5 install -y \
+    openbox \
+    xorg-x11-xinit \
+    xorg-x11-server-Xorg \
+    lightdm \
+    lightdm-gtk \
+    xorg-x11-drv-libinput
+
 # get chromiumos and unpack it
 rm -rf /usr/bluemium/cros/README.txt
 curl -L \
@@ -80,3 +89,5 @@ sudo sh -c "echo 'KERNEL==\"card[0-9]*\", NAME=\"dri/%k\", GROUP=\"video\"' > /e
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable lightdm.service
+systemctl set-default graphical.target
