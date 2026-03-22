@@ -5,7 +5,7 @@ minsize = "20 GiB"
 [customizations.installer.kickstart]
 contents = """
 %post
-bootc switch --mutate-in-place --transport registry ghcr.io/weeniemount/BluemiumOS:latest
+bootc switch --mutate-in-place --transport registry ghcr.io/weeniemount/bluemiumos:latest
 %end
 """
 
