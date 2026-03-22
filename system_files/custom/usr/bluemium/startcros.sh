@@ -1,19 +1,20 @@
 #!/bin/bash
 
 
-# sudo chvt 8; 
-# we should run this command, but not right now as i need to make sure starting chromium actually works
+KEYS_FILE="$HOME/.config/bluemium/oauth2.conf"
 
-EGL_PLATFORM=surfaceless /usr/bluemium/cros/chrome \
-  --ozone-platform=drm \
-  --enable-running-as-system-compositor \
-  --login-profile=user \
-  --user-data-dir=$HOME/.config/google-chrome-gbm \
-  --use-gl=egl \
-  --enable-wayland-server \
-  --login-manager \
-  --ash-constrain-pointer-to-root \
-  --default-tile-width=512 \
-  --default-tile-height=512 \
-  --system-developer-mode \
-  --crosh-command=/bin/bash
+CHROME_ARGS=""
+if [ -f "$KEYS_FILE" ]; then
+  source "$KEYS_FILE"
+  CHROME_ARGS="--login-manager \
+    --oauth2-client-id=$OAUTH2_CLIENT_ID \
+    --oauth2-client-secret=$OAUTH2_CLIENT_SECRET"
+fi
+
+(
+  while ! wmctrl -l | grep -q .; do sleep 0.2; done
+  wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+  wmctrl -r :ACTIVE: -b add,fullscreen
+) &
+
+/usr/bluemium/cros/chrome $CHROME_ARGS
