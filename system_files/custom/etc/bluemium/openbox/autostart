@@ -1,4 +1,10 @@
 #!/bin/bash
+(
+  while ! wmctrl -l | grep -q .; do sleep 0.2; done
+  wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+  wmctrl -r :ACTIVE: -b add,fullscreen
+) &
+
 /usr/bluemium/cros/chrome
 # sends you back to the login screen just cause
 openbox --exit
