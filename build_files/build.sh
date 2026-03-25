@@ -55,7 +55,8 @@ dnf5 install -y \
     xterm \
 	wmctrl \
 	feh \
-	plymouth
+	plymouth \
+	plymouth-theme-spinner
 
 cat > /usr/share/xsessions/openbox.desktop << 'EOF'
 [Desktop Entry]
