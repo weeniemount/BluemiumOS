@@ -90,7 +90,6 @@ sudo sh -c "echo 'KERNEL==\"card[0-9]*\", NAME=\"dri/%k\", GROUP=\"video\"' > /e
 #newgrp audio
 
 plymouth-set-default-theme spinner
-rpm-ostree kargs --append=quiet --append=splash --append=plymouth.enable=1
 # and then forcefully rebuild initrd!!!!
 QUALIFIED_KERNEL="$(dnf5 repoquery --installed --queryformat='%{evr}.%{arch}' "kernel")"
 /usr/bin/dracut --no-hostonly --kver "$QUALIFIED_KERNEL" --reproducible --zstd -v --add ostree --add fido2 -f "/usr/lib/modules/$QUALIFIED_KERNEL/initramfs.img"

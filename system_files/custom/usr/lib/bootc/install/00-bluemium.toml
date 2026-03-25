@@ -1,2 +1,5 @@
 [install.filesystem.root]
 type = "xfs"
+
+[install.kargs]
+append = ["quiet", "splash", "plymouth.enable=1"]
