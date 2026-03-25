@@ -6,9 +6,11 @@ KEYS_FILE="$HOME/.config/bluemium/oauth2.conf"
 CHROME_ARGS=""
 if [ -f "$KEYS_FILE" ]; then
   source "$KEYS_FILE"
-  CHROME_ARGS="--login-manager \
-    --oauth2-client-id=$OAUTH2_CLIENT_ID \
-    --oauth2-client-secret=$OAUTH2_CLIENT_SECRET"
+  if [ "$OAUTH2_ENABLED" = "true" ]; then
+    CHROME_ARGS="--login-manager \
+      --oauth2-client-id=$OAUTH2_CLIENT_ID \
+      --oauth2-client-secret=$OAUTH2_CLIENT_SECRET"
+  fi
 fi
 
 (
